@@ -1,0 +1,39 @@
+Terrific's Logs
+here i will write what i added/removed or started or tryied or fixed
+
+========================
+05.19,2021 11:05pm
+- Added FPS thing
+- Added MemoryUssage
+- Added some files to render, pvp, movement, exploits and client
+- Tryed to fix TabGui (didnt work)
+- Started with Ping
+- did a new Backup
+
+-- TerrificTable55
+========================
+
+
+==============================================
+05.20.21 11:17pm
+- Added Server Name and Ip feature
+- Added auth class
+- Added player radar but will not implment it
+- Added seko
+- Added TPS feature
+- got Ping to work
+- start work on auth
+
+-- TerrificTable55
+==============================================
+
+
+==============================================
+05.21.21 10:56am
+- Finished TPS (but have to fix update thing)
+- Added TextRadar to Hud
+- Fixed Coordnets
+- Edited Coords[X, Y, Z,]:
+
+-- TerrificTable55
+==============================================
