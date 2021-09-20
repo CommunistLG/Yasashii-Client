@@ -6,7 +6,6 @@ import me.terrifictable55.yasashii.module.modules.exploits.*;
 import me.terrifictable55.yasashii.module.modules.movement.*;
 import me.terrifictable55.yasashii.module.modules.pvp.*;
 import me.terrifictable55.yasashii.module.modules.render.*;
-import me.terrifictable55.yasashii.module.modules.tabgui.*;
 import java.util.ArrayList;
 import java.util.List;
 

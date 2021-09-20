@@ -7,7 +7,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import java.awt.*;
@@ -48,7 +47,6 @@ public class Hud extends Gui {
         Collections.sort(Main.moduleManager.modules, new ModuleComparator());
         ScaledResolution sr = new ScaledResolution(mc);
         FontRenderer fr = mc.fontRenderer;
-        boolean abc = false;
 
 
 
@@ -95,12 +93,9 @@ public class Hud extends Gui {
             /** renders Memory used */
                final long K = 1024;
                final long M = K * K;
-               final long G = M * K;
-               final long T = G * K;
 
                /** calculate byte size to mb */
                 long usedMemory = Runtime.getRuntime().freeMemory();
-                long totalMemory = Runtime.getRuntime().totalMemory();
                 double usedmemory = usedMemory/M;
                 fr.drawStringWithShadow("[Memory]:", 2, 60, 0xFFAA00);
                 fr.drawStringWithShadow( usedmemory + " / 3000", 55, 60, 0xFFFFFF);
@@ -120,7 +115,6 @@ public class Hud extends Gui {
             /** renders Server Name and Ip */
             if(event.getType() == RenderGameOverlayEvent.ElementType.TEXT) {
                 String serverip = mc.getCurrentServerData().serverIP;
-                String servername = mc.getCurrentServerData().serverName;
                 fr.drawStringWithShadow("ServerName:", sr.getScaledWidth() - (126), 1, 0xFFAA00);
                 fr.drawStringWithShadow("ServerIp:", sr.getScaledWidth() - (112), 10, 0xFFAA00);
                 fr.drawStringWithShadow(serverip, sr.getScaledWidth() -60, 1, 0xFFFFFF);

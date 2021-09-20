@@ -1,11 +1,9 @@
 package me.terrifictable55.yasashii.module.modules.tabgui;
 
-import me.terrifictable55.yasashii.module.Category;
 import me.terrifictable55.yasashii.module.Module;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.ScaledResolution;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
@@ -17,15 +15,11 @@ import static me.terrifictable55.yasashii.Main.moduleManager;
 /** warning scuffed code */
 public class TabGui extends Gui {
     public String name, description;
-    private int key;
-    private Category category;
-    private boolean toggled;
 
     /** Render stuff */
     @SubscribeEvent
     public void renderOverlay(RenderGameOverlayEvent event) {
         Minecraft mc = Minecraft.getMinecraft();
-        ScaledResolution sr = new ScaledResolution(mc);
         FontRenderer fr = mc.fontRenderer;
 
         int xModules = 90;
@@ -37,7 +31,6 @@ public class TabGui extends Gui {
         boolean renderIsTabed = false;
         boolean clientIsTabed = false;
         boolean exploitIsTabed = false;
-        boolean nothing = true;
         /** extended, useless */
         boolean extendedExploit = false;
         boolean extendedCombat = false;
@@ -105,7 +98,6 @@ public class TabGui extends Gui {
                 fr.drawStringWithShadow(armorbreaker, xModules, yModules +30, white);
                 fr.drawStringWithShadow(bedaura, xModules, (yModules +40), white);
 
-                nothing = false;
                 combatIsTabed = true;
                 extendedCombat = true;
             }else {
@@ -188,7 +180,6 @@ public class TabGui extends Gui {
         }
         //if nothing == true;
         if (event.getType() == RenderGameOverlayEvent.ElementType.TEXT && !exploitIsTabed && !clientIsTabed && !combatIsTabed && !renderIsTabed && !movementIsTabed) {
-            nothing = true;
             extendedExploit = false;
             return;
         }
